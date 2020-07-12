@@ -1,20 +1,11 @@
 import React from "react";
-import "./App.css";
-import Banner from "./components/Banner";
-import Navbar from "./components/Navbar";
-import Content from "./components/Content";
+import Row from "./Row";
+import requests from "../API/requests";
 
-function App() {
+function Content() {
   return (
-    <div className="app">
-      {/* Navbar */}
-      <Navbar />
-      {/* Banner */}
-      <Banner />
-      {/* Rows  */}
-      <Content />
-
-      {/* <Row
+    <div>
+      <Row
         title="NETFLIX TRENDING"
         fetchUrl={requests.fetchNetflixOriginals}
         isLargRow={true}
@@ -28,9 +19,9 @@ function App() {
       <Row
         title="Documentarias "
         fetchUrl={requests.fetchDocumentariesMovies}
-      /> */}
+      />
     </div>
   );
 }
 
-export default App;
+export default Content;
