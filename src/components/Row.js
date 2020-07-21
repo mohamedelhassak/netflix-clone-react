@@ -47,13 +47,11 @@ function Row({ title, fetchUrl, isLargRow }) {
     },
   };
 
-  console.log("movieTrailerr", trailerUrl);
+  console.log("movies", movies.length);
 
-  if (movies === null) {
-    return <div>No data pleasw Try Again....</div>;
-  } else {
-    return (
-      <div className="row">
+  const rowsContent =
+    movies.length === 0 ? null : (
+      <div>
         {/* title */}
         <h2>{title}</h2>
 
@@ -77,7 +75,8 @@ function Row({ title, fetchUrl, isLargRow }) {
         {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
       </div>
     );
-  }
+
+  return <div className="row">{rowsContent}</div>;
 }
 
 export default Row;
